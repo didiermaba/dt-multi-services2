@@ -1,0 +1,29 @@
+.network {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 100%;
+    font-size: 1rem;
+}
+.presentation {
+    
+    &__social {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 1rem;
+      right: 0;
+      &-frame {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 1rem !important;
+        background-color: #373a3f!important;
+      }
+      &-icon {
+        width: 30px !important;
+        height: 30px !important;
+        color: #1976d2 !important;
+      }
+    }
+
+}
+  

@@ -1,0 +1,325 @@
+
+  
+  $font-1: "font-1", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  $font-2: "font-2", serif;
+  
+  $color-0: #009be5;
+  $color-1: #fafeff;
+  $color-2: #00c1ec;
+  $color-3: #e7f7fe;
+  $color-4: rgb(92, 90, 90);
+  $black: rgb(40, 40, 40);
+  $red: rgb(253, 87, 87);
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  
+    &::selection {
+      color: $color-1;
+      background: $color-2;
+    }
+  }
+  html { 
+    scroll-behavior: unset;
+  }
+  a,
+  a:visited {
+    color: $color-4;
+  }
+  body {
+    font-family: $font-1;
+    height: 100vh;
+    background-color: $color-1;
+    color: $black;
+    overflow-x: hidden;
+  
+  }
+  @media screen and (max-width: 430px) {
+    body {
+      position: relative;
+      max-width: 100vw;
+      overflow-y: initial;
+      overflow-x: hidden;
+    }
+  }
+  main {
+    position: relative;
+  }
+  .button {
+    background: $color-3;
+    height: 55px;
+    width: 126px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+  
+    &:hover {
+      letter-spacing: 1px;
+      color: $color-2;
+    }
+  }
+  
+  .elt {
+    margin: 0;
+    width: 100%;
+  }
+  
+   /* MOUSE */
+   .cursor {
+    width: 62px;
+    height: 62px;
+    border: 1px solid teal;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: 500ms ease-out;
+    z-index: 2;
+    backdrop-filter: brightness(115%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transition: 500ms ease-out;
+    -moz-transition: 500ms ease-out;
+    -ms-transition: 500ms ease-out;
+    -o-transition: 500ms ease-out;
+}
+  .cursor.hovered {
+    width: 30px;
+    height: 30px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    position: relative;
+  
+  }
+  .wrapper>* {
+    padding: 10px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+.contact {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  &:after {
+    content: "";
+    height: 400px;
+    width: 400px;
+    background: $color-3;
+    border-radius: 50%;
+    position: absolute;
+    top: 150px;
+    z-index: -10;
+    animation: contactAnim 25s alternate infinite;
+
+    @media screen and (max-width: 840px) {
+      height: 200px;
+      width: 200px;
+      top: 520px;
+      // right: -140px;
+    }
+    @media screen and (max-width: 430px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes contactAnim {
+      50% {
+        transform: scale(1.4);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+  .navigation {
+    @media screen and (max-width: 440px) {
+      display: none;
+    }
+  }
+
+  .form-container {
+    margin: 7% 0 0 24%;
+    max-width: 50%;
+    position: relative;
+    max-width: 300px;
+
+    @media screen and (max-width: 740px) {
+      margin: 20% 19% 0 19%;
+    }
+    @media screen and (max-width: 440px) {
+      // margin-left: 3rem;
+      margin: 20% 19% 0 19%;
+    }
+    h2 {
+      margin-bottom: 50px;
+
+      &:after {
+        content: "";
+        height: 70px;
+        width: 70px;
+        border: 1px $color-2 solid;
+        border-radius: 50%;
+        position: absolute;
+        top: -22px;
+        left: 133px;
+        z-index: -1;
+      }
+    }
+
+    .form-content {
+      display: grid;
+
+      input,
+      textarea {
+        background: none;
+        font-family: $font-1;
+        font-size: 1.2rem;
+        border-bottom: 1px solid $color-2;
+        border-radius: 5px;
+
+        @media screen and (min-width: 1200px) {
+          font-size: 1.5rem;
+        }
+      }
+      input {
+        padding: 10px 6px;
+        margin-bottom: 30px;
+      }
+    }
+    textarea {
+      resize: none;
+      padding: 6px 0;
+      height: 70px;
+
+      @media screen and (max-width: 540px) {
+        width: 75%;
+        padding: 12px 0;
+      }
+    }
+    input.button {
+      background: $color-0;
+      height: 55px;
+      width: 126px;
+      border-radius: 50px;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.2s;
+      border: none;
+    }
+  }
+}
+.formMessage {
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px 0;
+
+  }
+.success {
+      background: rgb(139, 248, 139);
+    }
+.error {
+      background: rgb(246, 147, 147);
+    }  
+.footer{
+  background-color: #1976D2; 
+
+.contact-infos {
+  bottom: 0; 
+  // left: 0;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-around;
+  height: 25%;
+  width: 100%;
+  
+  padding: 20px; /* Ajoutez de l'espace intérieur pour un meilleur aspect */
+  box-sizing: border-box; /* Incluez le padding dans la largeur et la hauteur */
+  
+  h4 {
+    color: $color-4;
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 4px 0; /* Ajoutez un peu d'espace entre les éléments */
+  }
+
+  // .email,
+  // .phone {
+  //   display: block;
+  // }
+
+  .email .content p,
+  .phone .content p {
+    transition: 0.25s;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .address {
+    position: relative;
+  }
+
+  .phone {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .email {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+
+    .address {
+      display: none;
+    }
+  }
+}
+}
+.credits {
+   width: 100%;
+   text-align: center;
+
+  p {
+    font-size: 0.9rem;
+    color: #fff;
+
+    a {
+      color: orange;
+    }
+  }
+}
